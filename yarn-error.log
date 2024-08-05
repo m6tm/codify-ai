@@ -1,0 +1,60 @@
+Arguments: 
+  C:\Program Files\nodejs\node_modules\node\bin\node.exe C:\Users\M~6TM\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js
+
+PATH: 
+  C:\Users\M~6TM\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\local\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\M~6TM\bin;C:\gradle-8.5;C:\laragon\composer.phar;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0;C:\Windows\System32\OpenSSH;C:\laragon\bin\php\php-8.2.21-Win32-vs16-x64;C:\laragon\bin\php\php-8.1.18-Win32-vc15-x64;C:\laragon\bin\python\python-3.10;C:\Program Files (x86)\GnuWin32\bin;C:\Users\M~6TM\AppData\Local\tailwind;J:\bin;C:\Program Files\Microsoft SQL Server\150\Tools\Binn;C:\Program Files (x86)\PuTTY;C:\Users\M~6TM\AppData\Roaming\nvm;C:\Program Files\nodejs;C:\stripe;C:\Program Files\Docker\Docker\resources\bin;C:\Program Files (x86)\PuTTY;C:\flutter\bin;C:\Program Files\Google\Chrome\Application;C:\Program Files (x86)\Windows Kits\10\Windows Performance Toolkit;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn;C:\Program Files\dotnet;C:\ProgramData\ComposerSetup\bin;C:\Program Files\PowerShell\7;C:\Program Files\Git\cmd;C:\Users\M~6TM\AppData\Local\pnpm;C:\laragon\bin;C:\laragon\bin\apache\httpd-2.4.54-win64-VS16\bin;C:\laragon\bin\composer;C:\laragon\bin\dbeaver;C:\laragon\bin\git\bin;C:\laragon\bin\git\cmd;C:\laragon\bin\git\mingw64\bin;C:\laragon\bin\git\usr\bin;C:\laragon\bin\laragon\utils;C:\laragon\bin\mysql\mysql-8.0.30-winx64\bin;C:\laragon\bin\nginx\nginx-1.22.0;C:\laragon\bin\ngrok;C:\laragon\bin\nodejs;C:\laragon\bin\notepad++;C:\laragon\bin\php\php-8.2.21-Win32-vs16-x64;C:\laragon\bin\postgresql\postgresql-15.1-1\bin;C:\laragon\bin\python\python-3.10;C:\laragon\bin\python\python-3.10\Scripts;C:\laragon\bin\redis\redis-x64-5.0.14.1;C:\laragon\bin\telnet;C:\laragon\usr\bin;C:\Users\M~6TM\AppData\Local\Yarn\config\global\node_modules\.bin;C:\Users\M~6TM\AppData\Roaming\Composer\vendor\bin;C:\Users\M~6TM\AppData\Roaming\npm;C:\Users\M~6TM\AppData\Local\Microsoft\WindowsApps;C:\Program Files\JetBrains\PyCharm Community Edition 2022.1.3\bin;C:\Users\M~6TM\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\M~6TM\AppData\Roaming\nvm;C:\Program Files\nodejs;C:\Program Files\Git\usr\bin\vendor_perl;C:\Program Files\Git\usr\bin\core_perl
+
+Yarn version: 
+  1.22.19
+
+Node version: 
+  20.14.0
+
+Platform: 
+  win32 x64
+
+Trace: 
+  Error: getaddrinfo ENOTFOUND registry.yarnpkg.com
+      at GetAddrInfoReqWrap.onlookupall [as oncomplete] (node:dns:120:26)
+
+npm manifest: 
+  {
+    "name": "codify-ai",
+    "displayName": "Codify AI",
+    "description": "",
+    "version": "0.0.1",
+    "engines": {
+      "vscode": "^1.92.0"
+    },
+    "categories": [
+      "Other"
+    ],
+    "activationEvents": [],
+    "main": "./extension.js",
+    "contributes": {
+      "commands": [{
+        "command": "codify-ai.helloWorld",
+        "title": "Hello World"
+      }]
+    },
+    "scripts": {
+      "lint": "eslint .",
+      "pretest": "yarn run lint",
+      "test": "vscode-test"
+    },
+    "devDependencies": {
+      "@types/vscode": "^1.92.0",
+      "@types/mocha": "^10.0.7",
+      "@types/node": "20.x",
+      "eslint": "^8.57.0",
+      "typescript": "^5.4.5",
+      "@vscode/test-cli": "^0.0.9",
+      "@vscode/test-electron": "^2.4.0"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
