@@ -1,53 +1,55 @@
-// The module 'vscode' contains the VS Code extensibility API
+// Le module 'vscode' contient l'API d'extensibilité de VS Code
 
-import { getCompletionsFromGemini } from './complation';
+// import { getCompletionsFromGemini } from './completion';
 
-// Import the module and reference it with the alias vscode in your code below
+// Importez le module et référencez-le avec l'alias vscode dans votre code ci-dessous
 const vscode = require('vscode');
 
-// This method is called when your extension is activated
-// Your extension is activated the very first time the command is executed
+// Cette méthode est appelée lorsque votre extension est activée
+// Votre extension est activée la toute première fois que la commande est exécutée
 
 /**
  * @param {vscode.ExtensionContext} context
  */
 function activate(context) {
 
-	// Use the console to output diagnostic information (console.log) and errors (console.error)
-	// This line of code will only be executed once when your extension is activated
-	console.log('Congratulations, your extension "codify-ai" is now active!');
+	// Utilisez la console pour afficher des informations de diagnostic (console.log) et des erreurs (console.error)
+	// Cette ligne de code ne sera exécutée qu'une seule fois lors de l'activation de votre extension
+	console.log('Félicitations, votre extension "codify-ai" est maintenant active !');
 
-	// The command has been defined in the package.json file
-	// Now provide the implementation of the command with  registerCommand
-	// The commandId parameter must match the command field in package.json
-	const disposable = vscode.commands.registerCommand('codify-ai.helloWorld', function () {
-		// The code you place here will be executed every time your command is executed
+	// La commande a été définie dans le fichier package.json
+	// Maintenant, fournissez l'implémentation de la commande avec registerCommand
+	// Le paramètre commandId doit correspondre au champ command dans package.json
+	const disposables = [
+		vscode.commands.registerCommand('codify-ai.completion', function () {
+			// Le code que vous placez ici sera exécuté chaque fois que votre commande sera exécutée
+	
+			// Afficher une boîte de message à l'utilisateur
+			vscode.window.showInformationMessage('Bonjour le monde depuis Codify AI !!!');
+		})
+	]
 
-		// Display a message box to the user
-		vscode.window.showInformationMessage('Hello World from Codify AI!');
-	});
+	// vscode.languages.registerCompletionItemProvider('javascript', {
+	// 	async provideCompletionItems(document, position, token, context) {
+	// 		// const completionItem = new vscode.CompletionItem('Hello World');
+	// 		// return [completionItem];
+	// 		let suggestions = [];
+	// 		// Utilisez l'API Gemini pour générer des suggestions d'autocomplétion
+	// 		let completions = await getCompletionsFromGemini(document, position);
+	// 		suggestions = completions.map(c => {
+	// 			let item = new vscode.CompletionItem(c.label);
+	// 			item.kind = vscode.CompletionItemKind.Snippet;
+	// 			item.insertText = c.insertText;
+	// 			return item;
+	// 		});
+	// 		return suggestions;
+	// 	}
+	// });
 
-	vscode.languages.registerCompletionItemProvider('javascript', {
-		async provideCompletionItems(document, position, token, context) {
-			// const completionItem = new vscode.CompletionItem('Hello World');
-			// return [completionItem];
-			let suggestions = [];
-			// Utilisez l'API Gemini pour générer des suggestions d'autocomplétion
-			let completions = await getCompletionsFromGemini(document, position);
-			suggestions = completions.map(c => {
-				let item = new vscode.CompletionItem(c.label);
-				item.kind = vscode.CompletionItemKind.Snippet;
-				item.insertText = c.insertText;
-				return item;
-			});
-			return suggestions;
-		}
-	});
-
-	context.subscriptions.push(disposable);
+	disposables.forEach(disposable => context.subscriptions.push(disposable));
 }
 
-// This method is called when your extension is deactivated
+// Cette méthode est appelée lorsque votre extension est désactivée
 function deactivate() {}
 
 module.exports = {

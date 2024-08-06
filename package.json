@@ -7,14 +7,22 @@
     "vscode": "^1.92.0"
   },
   "categories": [
-    "Other"
+    "AI",
+    "Programming Languages",
+    "Snippets"
   ],
-  "activationEvents": [],
+  "activationEvents": [
+    "onLanguage:python",
+    "onLanguage:javascript",
+    "onLanguage:typescript"
+  ],
   "main": "./extension.js",
   "contributes": {
     "commands": [{
-      "command": "codify-ai.helloWorld",
-      "title": "Hello World"
+      "command": "codify-ai.completion",
+      "title": "Codify AI: Complete your code",
+      "category": "completion",
+      "shortTitle": "Codify AI Completion"
     }],
     "configuration": {
         "type": "object",
@@ -40,7 +48,7 @@
   "scripts": {
     "lint": "eslint .",
     "pretest": "yarn run lint",
-    "test": "vscode-test"
+    "test": "clear && vscode-test"
   },
   "devDependencies": {
     "@types/vscode": "^1.92.0",
